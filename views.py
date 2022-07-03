@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .models import Blog
+from .models import Blog, Post
 from .forms import BlogForm, PostForm
 
 def home(request):
@@ -56,4 +56,37 @@ def new_post(request, blog_id):
     context = {'blog': blog, 'form': form}
     return render(request, 'my_blog/new_post.html', context)
 
-    
+def edit_post(request, post_id):
+    """Edycja istniejącego postu."""
+    post = Post.objects.get(id=post_id)
+    blog = post.blog
+
+    if request.method != 'POST':
+        # Wypełnienie formularza aktualną treścią.
+        form = PostForm(instance=post)
+    else:
+        # Przekazano dane za pomocą żądania POST. Przetwórz te dane.
+        form = PostForm(instance=post, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('my_blog:blog', blog.id)
+
+    context = {'post': post, 'blog': blog, 'form': form}
+    return render(request, 'my_blog/edit_post.html', context)
+
+def edit_blog_title(request, blog_id):
+    """Edycja nazwy bloga."""
+    blog = Blog.objects.get(id=blog_id)
+
+    if request.method != 'POST':
+        # Wypełnienie formularza aktualną treścią.
+        form = BlogForm(instance=blog)
+    else:
+        # Przekazano dane za pomocą żądania POST. Przetwórz te dane.
+        form = BlogForm(instance=blog, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('my_blog:blogs')
+
+    context = {'blog': blog, 'form': form}
+    return render(request, 'my_blog/edit_blog.html', context)
