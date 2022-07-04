@@ -62,10 +62,26 @@ def edit_blog_title(request, blog_id):
         form = BlogForm(instance=blog, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('my_blog:blogs')
+            return redirect('my_blog:blog', blog.id)
 
     context = {'blog': blog, 'form': form}
-    return render(request, 'my_blog/edit_blog.html', context)
+    return render(request, 'my_blog/edit_blog_title.html', context)
+
+@login_required
+def delete_blog(request, blog_id):
+    """Usuwanie bloga."""
+    blog = Blog.objects.get(id=blog_id)
+    # Sprawdzenie, czy bieżący użytkownik jest właścicielem bloga.
+    if blog.owner != request.user:
+        raise Http404
+
+    if blog.owner.id == request.user.id:
+        if request.method == 'POST':
+            blog.delete()
+            return redirect('my_blog:blogs')
+
+    context = {'blog': blog}
+    return render(request, 'my_blog/delete_blog.html', context)
 
 @login_required
 def new_post(request, blog_id):
@@ -113,6 +129,22 @@ def edit_post(request, post_id):
     context = {'post': post, 'blog': blog, 'form': form}
     return render(request, 'my_blog/edit_post.html', context)
 
+@login_required
+def delete_post(request, post_id):
+    "Usuwanie istniejącego postu."
+    post = Post.objects.get(id=post_id)
+    blog = post.blog
+    # Sprawdzenie, czy bieżący użytkownik jest właścicielem bloga.
+    if blog.owner != request.user:
+        raise Http404
+
+    if blog.owner.id == request.user.id:
+        if request.method == 'POST':
+            post.delete()
+            return redirect('my_blog:blog', blog.id)
+
+    context = {'post': post, 'blog': blog}
+    return render(request, 'my_blog/delete_post.html', context)
 
 
     

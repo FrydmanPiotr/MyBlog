@@ -1,0 +1,16 @@
+{% extends "my_blog/base.html" %}
+
+
+{% block content %}
+  
+  <p><a href="{% url 'my_blog:blog' blog.id %}">{{ blog }}</a></p>
+
+  <p>Czy na pewno chcesz usunąć ten blog i wszystkie umieszczone na nim posty ?</p>
+
+  <form method='POST'>
+    {% csrf_token %}
+    <button name="submit">Usuń</button>
+  </form>
+
+{% endblock content %}
+
