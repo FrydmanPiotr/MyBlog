@@ -1,17 +1,23 @@
 {% extends "my_blog/base.html" %}
+{% load bootstrap4 %}
 
 {% block content %}
 
-  {% if form.errors %}
-  <p>Nazwa użytkownika i hasło są nieprawidłowe. Proszę spróbować ponownie.</p>
-  {% endif %}
-  
-  <form method='POST' action="{% url 'users:login' %}">
+<fieldset class="border bg bg-white rounded p-2">
+<div class="container">
+<legend>Zaloguj się do konta</legend>
+  <form method="POST" action="{% url 'users:login' %}" class="form">
   {% csrf_token %}
-  {{ form.as_p }}
-
-  <button name="submit">Zaloguj się</button>
+  {% bootstrap_form form %}
+  {% buttons %}
+    <button name="submit" class="btn btn-primary">Zaloguj się</button>
+  {% endbuttons %}
   <input type="hidden" name="next" value="{% url 'my_blog:home' %}">
   </form>
+</div>
+</fieldset>
+{% endblock content %}
 
-{% endblock content %}  
+ 
+                        
+                        
