@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, Http404
 
@@ -19,7 +19,7 @@ def blogs(request):
 @login_required
 def blog(request, blog_id):
     """Wyświetla blog użytkownika i opublikowane na nim posty."""
-    blog = Blog.objects.get(id=blog_id)
+    blog = get_object_or_404(Blog, id=blog_id)
     """Sprawdzenie, czy blog należy do bieżącego użytkownika."""
     if blog.owner != request.user:
         raise Http404
