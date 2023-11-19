@@ -4,7 +4,7 @@ Aplikacja webowa - MyBlog oparta frameworku Django
 Aplikacja internetowa MyBlog umożliwia użytkownikowi:
 - rejestrację użytkownika
 - utworzenie nowego bloga(-ów), edycję nazwy bloga(-ów)
-  oraz usunięcie
+  oraz ich usunięcie
 - tworzenie, edycję oraz usuwanie postów
 
 Aplikacja jest przejrzysta i przyjazna użytkownikowi.
