@@ -21,5 +21,12 @@ class Post(models.Model):
         """Reprezentacja modelu w postaci ciągu tekstowego."""
         return f"{self.text[:50]}..."
 
+class Author(models.Model):
+    """Opis autora bloga."""
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
 
-
+    def __str__(self):
+        """Reprezentacja modelu w postaci ciągu tekstowego."""
+        return f"{self.text[:50]}..."
+    
