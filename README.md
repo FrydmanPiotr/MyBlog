@@ -9,6 +9,8 @@ Aplikacja internetowa MyBlog umożliwia użytkownikowi:
 
 Aplikacja jest przejrzysta i przyjazna użytkownikowi.
 Zawiera stronę główną oraz strony błędów 404 i 500.
+Strona użytkownika umożliwi umieszczenie opisu autora
+bloga.
 
 Na potrzeby administrowania witryną framework Django 
 udostępnia panel administracyjny.
