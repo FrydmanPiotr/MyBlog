@@ -1,4 +1,4 @@
-"""Definiuje wzorce adresów URL dla aplikacji my_blog."""
+"""Definiuje wzorce adresów URL dla my_blog"""
 
 from django.urls import path
 
@@ -7,7 +7,9 @@ from . import views
 app_name = 'my_blog'
 urlpatterns = [
     # Strona główna.
-    path('', views.home, name='home'),
+    path('', views.index, name='index'),
+    #Opis autora bloga(-ów).
+    path('about_author/',views.about_author, name='about_author'),
     # Blogi utworzone przez użytkownika.
     path('blogs/', views.blogs, name='blogs'),
     # Strona bloga użytkownika.
@@ -22,6 +24,6 @@ urlpatterns = [
     path('new_post/(<int:blog_id>)/', views.new_post, name='new_post'),
     # Strona przeznaczona do edycji postu.
     path('edit_post/<int:post_id>/', views.edit_post, name='edit_post'),
-    # Strona przeznaczona do usunięcia wpisu.
+    # Strona przeznaczona do usunięcia postu.
     path('delete_post/<int:post_id>/', views.delete_post, name='delete_post'),
-]
+]   

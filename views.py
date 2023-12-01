@@ -2,12 +2,17 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, Http404
 
-from .models import Blog, Post
-from .forms import BlogForm, PostForm
+from .models import Blog, Post, Author
+from .forms import BlogForm, PostForm, AuthorForm
 
-def home(request):
+def index(request):
     """Strona główna aplikacji MyBlog."""
-    return render(request, 'my_blog/home.html')
+    return render(request, 'my_blog/index.html')
+
+@login_required
+def about_author(request):
+    """Opis autora bloga."""
+    return render(request, 'my_blog/about_author.html')
 
 @login_required
 def blogs(request):
@@ -87,10 +92,7 @@ def delete_blog(request, blog_id):
 def new_post(request, blog_id):
     """Tworzenie nowego postu na blogu."""
     blog = Blog.objects.get(id=blog_id)
-    # Sprawdzenie, czy bieżący użytkownik jest właścicielem bloga.
-    if blog.owner != request.user:
-        raise Http404
-
+    
     if request.method != 'POST':
         # Nie zostały przekazane żadne dane. Utwórz pusty formularz.
         form = PostForm()
@@ -145,8 +147,3 @@ def delete_post(request, post_id):
 
     context = {'post': post, 'blog': blog}
     return render(request, 'my_blog/delete_post.html', context)
-
-
-    
-
-    
