@@ -8,8 +8,10 @@ app_name = 'my_blog'
 urlpatterns = [
     # Strona główna.
     path('', views.index, name='index'),
-    #Opis autora bloga(-ów).
-    path('about_author/',views.about_author, name='about_author'),
+    #Strona autora bloga(-ów).
+    path('author/',views.author, name='author'),
+    #Strona przeznaczona do utworzenia opisu o autorze.
+    path('create_desc/', views.create_desc, name='create_desc'),
     # Blogi utworzone przez użytkownika.
     path('blogs/', views.blogs, name='blogs'),
     # Strona bloga użytkownika.

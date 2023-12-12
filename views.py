@@ -10,9 +10,28 @@ def index(request):
     return render(request, 'my_blog/index.html')
 
 @login_required
-def about_author(request):
-    """Opis autora bloga."""
-    return render(request, 'my_blog/about_author.html')
+def author(request):
+    """Strona autora bloga."""
+    return render(request, 'my_blog/author.html')
+
+@login_required
+def create_desc(request):
+    """Utwórz opis o autorze."""
+    if request.method != 'POST':
+        # Nie zostały przekazane żadne dane. Utwórz pusty formularz.
+        form = AuthorForm()
+    else:
+        # Przekazano dane za pomocą żądania POST. Przetwórz te dane.
+        form = AuthorForm(data=request.POST)
+        if form.is_valid():
+            create_desc = form.save(commit=False)
+            create_desc.owner = request.user
+            create_desc.save()
+            return redirect('my_blog:author')
+
+    # Wyświetla pusty formularz.
+    context = {'form': form}
+    return render(request, 'my_blog/create_desc.html', context)
 
 @login_required
 def blogs(request):

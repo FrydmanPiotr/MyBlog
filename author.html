@@ -1,0 +1,11 @@
+{% extends "my_blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h2>{{user.username}}</h2>
+{% endblock page_header %}
+
+{% block content %}
+
+  <h3><a class="btn btn-secondary btn-sm ml-2" href="{% url 'my_blog:create_desc' %}">Utwórz opis</a></h3>
+{% endblock content %}
