@@ -12,7 +12,9 @@ def index(request):
 @login_required
 def author(request):
     """Strona autora bloga."""
-    return render(request, 'my_blog/author.html')
+    author = Author.objects.filter(owner=request.user)
+    context = {'author':author}
+    return render(request, 'my_blog/author.html', context)
 
 @login_required
 def create_desc(request):

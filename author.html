@@ -6,6 +6,14 @@
 {% endblock page_header %}
 
 {% block content %}
+  
+  <ul>
+    {% for i in author %}
+      <li>{{ i.text }}</li>
+    {% empty %}
+      <li><h3>Nie utworzono opisu</h3></li>
+      <h3><a class="btn btn-secondary btn-sm ml-2" href="{% url 'my_blog:create_desc' %}">Utwórz opis</a></h3>
+    {% endfor %}
+  </ul>  
 
-  <h3><a class="btn btn-secondary btn-sm ml-2" href="{% url 'my_blog:create_desc' %}">Utwórz opis</a></h3>
 {% endblock content %}
