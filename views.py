@@ -36,6 +36,26 @@ def create_desc(request):
     return render(request, 'my_blog/create_desc.html', context)
 
 @login_required
+def edit_desc(request):
+    """Edycja opisu autora."""
+    author = Author.objects.get(owner=request.user)
+    if author.owner != request.user:
+        raise Http404
+
+    if request.method != 'POST':
+        # Wypełnienie formularza aktualną treścią.
+        form = AuthorForm(instance=author)
+    else:
+        # Przekazano dane za pomocą żądania POST. Przetwórz te dane.
+        form = AuthorForm(instance=author, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('my_blog:author')
+
+    context = {'author': author, 'form': form}
+    return render(request, 'my_blog/edit_desc.html', context)
+
+@login_required
 def blogs(request):
     """Blogi użytkownika."""
     blogs = Blog.objects.filter(owner=request.user).order_by('date_added')

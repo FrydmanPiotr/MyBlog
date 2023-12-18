@@ -12,6 +12,8 @@ urlpatterns = [
     path('author/',views.author, name='author'),
     #Strona przeznaczona do utworzenia opisu o autorze.
     path('create_desc/', views.create_desc, name='create_desc'),
+    #Strona przeznaczona do edycji opisu o autorze.
+    path('edit_desc/', views.edit_desc, name='edit_desc'),
     # Blogi utworzone przez użytkownika.
     path('blogs/', views.blogs, name='blogs'),
     # Strona bloga użytkownika.
