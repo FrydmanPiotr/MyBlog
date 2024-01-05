@@ -6,11 +6,11 @@ Aplikacja internetowa MyBlog umożliwia użytkownikowi:
 - utworzenie nowego bloga(-ów), edycję nazwy bloga(-ów)
   oraz ich usunięcie
 - tworzenie, edycję oraz usuwanie postów
+- utworzenie i edycję opisu o autorze
 
 Aplikacja jest przejrzysta i przyjazna użytkownikowi.
-Zawiera stronę główną oraz strony błędów 404 i 500.
-Strona użytkownika umożliwi umieszczenie opisu autora
-bloga.
+Zawiera domyślną stronę główną oraz strony błędów 404 i 500.
+Strona użytkownika umożliwia dodanie opisu o autorze.
 
 Na potrzeby administrowania witryną framework Django 
 udostępnia panel administracyjny.
