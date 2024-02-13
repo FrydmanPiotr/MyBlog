@@ -2,17 +2,18 @@
 {% load bootstrap4 %}
 
 {% block page_header %}
-  <h2>{{user.username}}</h2>
+  <h3>{{user.username}}</h3>
 {% endblock page_header %}
 
 {% block content %}
   
   <ul>
     {% for i in author %}
-      <div>
-        <li>{{ i.text }}</li>
-	<h3><a class="btn btn-secondary btn-sm ml-2" href="{% url 'my_blog:edit_desc'%}">Edytuj opis</a></h3>
+      <div class="card mb-3 mt-3 p-2"> 
+        <h5 class="opis-autora">O autorze</h5>
+        <p>{{ i.text }}</p>
       </div>
+        <h3><a class="btn btn-secondary btn-sm ml-2" href="{% url 'my_blog:edit_desc'%}">Edytuj opis</a></h3>
     {% empty %}
       <div>
         <li><h3>Nie utworzono opisu</h3></li>

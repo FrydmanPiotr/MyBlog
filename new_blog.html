@@ -6,14 +6,12 @@
 {% endblock page_header %}
 
 {% block content %}
-  
-  <p><a href="{% url 'my_blog:blogs' %}">Anuluj</a></p>  
-
   <form action="{% url 'my_blog:new_blog' %}" method='POST' class="form">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}
       <button name="submit" class="btn btn-secondary">Utwórz blog</button>
+      <a class="btn btn-primary" href="{% url 'my_blog:blogs' %}">Anuluj</a> 
     {% endbuttons %}
   </form>
 
