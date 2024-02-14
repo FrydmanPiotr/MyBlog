@@ -1,16 +1,35 @@
-# MyBlog-webApplication
-Aplikacja webowa - MyBlog oparta frameworku Django
+## Web application MyBlog
 
-Aplikacja internetowa MyBlog umożliwia użytkownikowi:
-- rejestrację użytkownika
-- utworzenie nowego bloga(-ów), edycję nazwy bloga(-ów)
-  oraz ich usunięcie
-- tworzenie, edycję oraz usuwanie postów
-- utworzenie i edycję opisu o autorze
+## Table of contents
+* Description
+* Technologies
+* Setup
 
-Aplikacja jest przejrzysta i przyjazna użytkownikowi.
-Zawiera domyślną stronę główną oraz strony błędów 404 i 500.
-Strona użytkownika umożliwia dodanie opisu o autorze.
+## Description
+The MyBlog web application is created with framework Django.
+It allows the user to:
+- user registration
+- creating a new blog(s), editing the name of the blog(s)
+  and their removal
+- creating, editing and deleting posts
+- creating and editing a description about the author
 
-Na potrzeby administrowania witryną framework Django 
-udostępnia panel administracyjny.
+The application is clear and user-friendly.
+Includes the default home page and 404 and 500 error pages.
+The user page allows you to add a description about the author.
+
+For site administration purposes, the Django framework
+provides the administration panel.
+
+## Technologies 
+Project is created with:
+* Python 3.11
+* Django
+* Bootstrap 4
+
+## Setup
+To run this project, install localy following Python modules:
+* 
+
+## Sources
+
