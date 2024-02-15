@@ -24,12 +24,19 @@ provides the administration panel.
 ## Technologies 
 Project is created with:
 * Python 3.11
-* Django
+* Django 4.2.7
 * Bootstrap 4
 
 ## Setup
-To run this project, install localy following Python modules:
-* 
+To run this project, install locally following modules:
+* django
+* django-bootstrap4
+* python
 
-## Sources
 
+Use this command in system console:
+
+```
+pip install <module_name>
+
+```
