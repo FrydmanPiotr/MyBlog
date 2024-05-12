@@ -16,9 +16,9 @@
 
   <body>
     
-    <nav class="navbar navbar-expand-md navbar-light bg-white mb-4 border-top-0">
+    <nav class="navbar navbar-expand-md navbar-light bg-info mb-4 border-top-0">
 
-	<a class="navbar-brand ml-2" href="{% url 'my_blog:index' %}">MyBlog</a>
+	<a class="navbar-brand ml-2 text-white" href="{% url 'my_blog:index' %}">MyBlog</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -27,23 +27,23 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'my_blog:blogs' %}">Blogi</a></li>
+          <a class="nav-link text-white" href="{% url 'my_blog:blogs' %}">Blogi</a></li>
       </ul>
       <ul class="navbar-nav ml-auto">
 
         {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'my_blog:about_author' %}">{{user.username}}</a>
+            <a class="nav-link text-white" href="{% url 'my_blog:author'%}">{{user.username}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:logout' %}">Wyloguj się</a>
+            <a class="nav-link text-white" href="{% url 'users:logout' %}">Wyloguj się</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:register' %}">Zarejestruj się</a>
+            <a class="nav-link text-white" href="{% url 'users:register' %}">Zarejestruj się</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:login' %}">Zaloguj się</a></li>
+            <a class="nav-link text-white" href="{% url 'users:login' %}">Zaloguj się</a></li>
         {% endif %}
       </ul>
     </div>
