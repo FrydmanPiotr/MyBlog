@@ -10,12 +10,13 @@
   {% csrf_token %}
   {% bootstrap_form form %}
   {% buttons %}
-    <button name="submit" class="btn btn-primary">Zaloguj się</button>
+    <button name="submit" class="btn btn-info">Zaloguj się</button>
   {% endbuttons %}
-  <input type="hidden" name="next" value="{% url 'my_blog:home' %}">
+  <input type="hidden" name="next" value="{% url 'my_blog:blogs' %}">
   </form>
 </div>
 </fieldset>
+
 {% endblock content %}
 
  
