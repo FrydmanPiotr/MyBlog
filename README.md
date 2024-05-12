@@ -21,6 +21,11 @@ The user page allows you to add a description about the author.
 For site administration purposes, the Django framework
 provides the administration panel.
 
+
+
+![Home](https://github.com/FrydmanPiotr/MyBlog-webApplication/blob/main/home.png))
+![Blogs site](https://github.com/FrydmanPiotr/MyBlog-webApplication/blob/main/blogs.png)
+
 ## Technologies 
 Project is created with:
 * Python 3.11
