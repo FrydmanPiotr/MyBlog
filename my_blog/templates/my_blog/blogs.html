@@ -1,0 +1,21 @@
+{% extends "my_blog/base.html" %}
+  
+{% block page_header %}
+  <h1 class="font-weight-light">Blogi użytkownika {{ user.username }}</h1>
+{% endblock page_header %}
+
+{% block content %}
+
+  <ul class="list-group list-group-flush">
+    {% for blog in blogs %}
+      <h4>
+        <li class="list-group-item"><a class="font-weight-normal" href="{% url 'my_blog:blog' blog.id %}">{{ blog }}</a></li>
+      </h4>
+     {% empty %}
+      <h5 class="font-weight-normal">Nie został jeszcze utworzony żadny blog</h5>
+    {% endfor %}
+  </ul>
+    <h3><a class="btn btn-secondary ml-2" href="{% url 'my_blog:new_blog' %}">Utwórz blog</a></h3>
+
+
+{% endblock content %}

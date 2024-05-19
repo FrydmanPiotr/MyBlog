@@ -1,0 +1,10 @@
+*.sqlite3
+manage.py
+ll_env
+blog
+migrations
+__pycache__
+__init__.py
+admin.py
+apps.py
+tests.py

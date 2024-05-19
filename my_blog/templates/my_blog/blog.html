@@ -1,0 +1,39 @@
+{% extends 'my_blog/base.html' %}
+
+{% block page_header %}
+  <h2 class="font-weight-light">{{ blog }}</h2>
+{% endblock page_header %}
+
+{% block content %}
+
+  <p>
+    <a class="btn btn-info btn-sm" href="{% url 'my_blog:edit_blog_title' blog.id %}">Edytuj nazwę</a>
+    <a class="btn btn-danger btn-sm" href="{% url 'my_blog:delete_blog' blog.id %}">Usuń blog</a>
+  </p>
+ 
+  {% for post in posts %}
+    <div class="card mb-3">
+      <h5 class="card-header">
+      {{ post.date_added|date:'d M Y H:i' }}
+        <small><a class="btn btn-info btn-sm ml-3" href="{% url 'my_blog:edit_post' post.id %}"
+          >Edytuj post</a></small>
+        <small><a class="btn btn-danger btn-sm" href="{% url 'my_blog:delete_post' post.id %}"
+          >Usuń post</a></small>
+      </h4>
+      <div class="card-body"> 
+      {{ post.text|linebreaks }}
+      </div>      
+    </div>
+  {% empty %}
+    <h5 class="bg bg-white font-weight-light mt-5 mb-4">Nie utworzono żadnego postu</h5>
+  {% endfor %}
+ <p>
+    <a class="btn btn-secondary btn-sm" href="{% url 'my_blog:new_post' blog.id %}">Utwórz nowy post</a>
+  </p>
+
+{% endblock content %}
+
+
+ 
+  
+ 

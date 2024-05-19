@@ -1,0 +1,17 @@
+{% extends "my_blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h2>Edytuj nazwę bloga</h2>
+{% endblock page_header %}
+
+{% block content %}
+  <form action="{% url 'my_blog:edit_blog_title' blog.id %}" method='POST'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button name="submit" class="btn btn-secondary">Zapisz zmiany</button>
+      <a class="btn btn-primary" href="{% url 'my_blog:blog' blog.id %}">Anuluj</a>
+    {% endbuttons %}
+   </form>
+{% endblock content %}

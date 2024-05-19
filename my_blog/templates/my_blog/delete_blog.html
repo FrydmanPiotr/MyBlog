@@ -1,0 +1,20 @@
+{% extends "my_blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h2>Usuń blog</h2>
+{% endblock page_header %}
+
+{% block content %}
+  <p>Czy na pewno chcesz usunąć ten blog i wszystkie umieszczone na nim posty ?</p>
+  <form method='POST'>
+    {% csrf_token %}
+    {% buttons %}
+      <button name="submit" class="btn btn-danger">Usuń</button>
+      <a class="btn btn-primary" href="{% url 'my_blog:blog' blog.id %}">Anuluj</a>
+    {% endbuttons %}
+  </form>
+    
+
+{% endblock content %}
+
