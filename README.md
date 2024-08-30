@@ -22,8 +22,8 @@ For site administration purposes, the Django framework
 provides the administration panel.
 
 <p>
-  ![Home](https://github.com/FrydmanPiotr/MyBlog/blob/main/images/home.png)
-  ![Blogs site](https://github.com/FrydmanPiotr/MyBlog/blob/main/images/blogs.png)
+  <img alt="Home" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/home.png">
+  <img alt="Blogs site" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/blogs.png">
 </p>
 
 ## Technologies 
