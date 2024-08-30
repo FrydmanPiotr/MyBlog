@@ -21,8 +21,10 @@ The user page allows you to add a description about the author.
 For site administration purposes, the Django framework
 provides the administration panel.
 
-![Home](https://github.com/FrydmanPiotr/MyBlog/blob/main/images/home.png)
-![Blogs site](https://github.com/FrydmanPiotr/MyBlog/blob/main/images/blogs.png)
+<p>
+  ![Home](https://github.com/FrydmanPiotr/MyBlog/blob/main/images/home.png)
+  ![Blogs site](https://github.com/FrydmanPiotr/MyBlog/blob/main/images/blogs.png)
+</p>
 
 ## Technologies 
 Project is created with:
@@ -36,8 +38,9 @@ To run this project, install locally following modules:
 * django-bootstrap4
 * python
 
-
-Use this command in system console:
+You can install these packages by using 
+this command in system console
+using PIP (Python package manager):
 
 ```
 pip install <module_name>
