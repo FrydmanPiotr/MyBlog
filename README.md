@@ -22,8 +22,8 @@ For site administration purposes, the Django framework
 provides the administration panel.
 
 <p>
-  <img alt="Home" width="1000" align="left" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/home.png">
-  <img alt="Blogs site" width="1000" align="right" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/blogs.png">
+  <img alt="Home" width="700" align="left" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/home.png">
+  <img alt="Blogs site" width="700" align="right" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/blogs.png">
 </p>
 
 ## Technologies 
