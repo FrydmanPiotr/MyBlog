@@ -1,5 +1,5 @@
-## Web application MyBlog
-
+<header>Web application MyBlog</header>
+<p>
 ## Table of contents
 * Description
 * Technologies
@@ -20,12 +20,12 @@ The user page allows you to add a description about the author.
 
 For site administration purposes, the Django framework
 provides the administration panel.
-
-<p>
-  <img alt="Home" width="500" align="left" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/home.png">
-  <img alt="Blogs site" width="550" align="right" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/blogs.png">
 </p>
-
+<p>
+  <img alt="Home" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/home.png">
+  <img alt="Blogs site" src="https://github.com/FrydmanPiotr/MyBlog/blob/main/images/blogs.png">
+</p>
+<p>
 ## Technologies 
 Project is created with:
 * Python 3.11
@@ -46,3 +46,4 @@ using PIP (Python package manager):
 pip install <module_name>
 
 ```
+</p>
